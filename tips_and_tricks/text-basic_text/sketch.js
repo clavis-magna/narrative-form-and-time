@@ -1,5 +1,5 @@
 // a variable is created her to hold our font
-// by placing the variable definition here, it is abvailable to the entire sketch
+// by placing the variable definition here, it is available to the entire sketch
 var miniver;
 
 // preload happens before setup and draw
