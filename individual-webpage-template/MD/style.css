@@ -86,10 +86,8 @@ li:last-child a{
 
 li a:hover{
     color: lightblue;
-    transform: scale(1.1);
 }
 
 li.current a{
   color: dimgray;
-  transform: scale(1.0);
 }
