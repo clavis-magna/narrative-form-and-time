@@ -1,12 +1,13 @@
 html, body {
   height: 100%;
+  overflow-y: scroll;
 }
 
 #canvas-container {
   height: 100%;
   margin: 0;
   display: flex;
-  
+
   margin-top: -80px;
 
   /* This centers our sketch horizontally. */
@@ -23,7 +24,7 @@ html, body {
 
 #wrapper{
     display: block;
-    width: 1150px;
+    max-width: 960px;
     margin: 0 auto;
 }
 
@@ -36,8 +37,8 @@ html, body {
 nav{
     background-color: light;
     display: block;
-    width: 1150px;
-    
+    max-width: 960px;
+
     /*
     position: fixed;
     top:0;

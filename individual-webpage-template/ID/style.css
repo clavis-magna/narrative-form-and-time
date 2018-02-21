@@ -1,12 +1,13 @@
 html, body {
   height: 100%;
+  overflow-y: scroll;
 }
 
 #canvas-container {
   height: 100%;
   margin: 0;
   display: flex;
-  
+
   margin-top: -40px;
 
   /* This centers our sketch horizontally. */
@@ -23,7 +24,7 @@ html, body {
 
 #wrapper{
     display: block;
-    width: 1150px;
+    max-width: 960px;
     margin: 0 auto;
 }
 
@@ -36,12 +37,7 @@ html, body {
 nav{
     background-color: light;
     display: block;
-    width: 1150px;
-    
-    position: fixed;
-    top:0;
-    left: auto;
-    right: auto;
+    max-width: 960px;
 }
 
 ul{
@@ -82,10 +78,8 @@ li:last-child a{
 
 li a:hover{
     color: lightblue;
-    transform: scale(1.1);
 }
 
 li.current a{
   color: dimgray;
-  transform: scale(1.0);
 }
