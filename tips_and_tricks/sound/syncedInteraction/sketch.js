@@ -5,6 +5,7 @@ function setup() {
   fill(255);
   textAlign(CENTER);
   text('', width/2, height/2);
+  ellipse(width/2, height/2,10,10);
 
   mySound = loadSound('assets/tide.mp3');
 
@@ -20,11 +21,17 @@ function setup() {
   mySound.addCue(14.2, changeText, "we had to beat the tide" );
   mySound.addCue(15.60, changeText, "to get" );
   mySound.addCue(16.13, changeText, "around that point there" );  
+  mySound.addCue(18.50, end);  
 }
 
 function changeText(val) {
   background(0);
   text(val, width/2, height/2);
+}
+
+function end(){
+    background(0);
+    ellipse(width/2, height/2,10,10);
 }
 
 function mouseClicked() {
