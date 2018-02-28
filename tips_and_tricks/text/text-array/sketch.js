@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(800,400);
+  createCanvas(200,200);
   background(0);
   
   // a variable to hold my full text
