@@ -20,10 +20,14 @@ function setup() {
   background(0);
   
   // a variable to hold my full text
-  var myText = 'All of my text as individual characters ';
+  // notice we use double quotes as we need to use a single quote as an opostrophe inside the quote
+  var myText = "when we saw the tide was starting to turn, we'd head back " ;
   // split the text into individual letters.
   // see https://p5js.org/reference/#/p5/split
-  myTextAsLetters = split(myText, '');
+  // the second parameter of split defines a character we use to split the text using.
+  // in this can the single quote marks have a space inside, 
+  // so the text is split at every space, making an array of words
+  myTextAsLetters = split(myText, ' ');
   // print the letters out to the console just so we can see what an array looks like
   print(myTextAsLetters);
   
