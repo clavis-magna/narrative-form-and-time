@@ -22,7 +22,7 @@ function setup() {
   // a variable to hold my full text
   // notice we use double quotes as we need to use a single quote as an opostrophe inside the quote
   var myText = "when we saw the tide was starting to turn, we'd head back " ;
-  // split the text into individual letters.
+  // split the text into individual words.
   // see https://p5js.org/reference/#/p5/split
   // the second parameter of split defines a character we use to split the text using.
   // in this can the single quote marks have a space inside, 
