@@ -17,27 +17,37 @@ function setup() {
 }
 
 function draw () {
+  
  if (screen==1) {
    //draw first screen
    background(50);
    text("Page 1", width/2,height/2);
-  } else if (screen==2) {
+  }
+  
+  else if (screen==2) {
     background(100);
     //draw second screen
     text("Page 2", width/2,height/2);
-  } else if (screen==3) {
+  }
+  
+  else if (screen==3) {
     background(150);
     //draw third screen
     text("Page 3", width/2,height/2);
-  } else if (screen==4) {
+  }
+  
+  else if (screen==4) {
     background(200);
     //draw fourth screen
     text("Page 4", width/2,height/2);
-  } else if (screen==5) {
+  }
+  
+  else if (screen==5) {
     background(250);
     //draw fifth screen
     text("Page 5", width/2,height/2);
   }
+  
 }
 
 function mousePressed () {
