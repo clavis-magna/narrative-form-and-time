@@ -8,7 +8,7 @@
 var catgif; // define a variable to hold the gif image in
 
 function preload(){
-    catgif = loadGif('assets/cat.gif'); // assign the actual image to the gif - same as loadImage, just using loadGif instead
+    catgif = createImage('assets/cat.gif'); // assign the actual image to the gif - same as loadImage, just using loadGif instead
 }
 
 function setup() {
@@ -19,13 +19,15 @@ function setup() {
 }
 
 function  draw() {
+    
     image(catgif, 0, 0); // draw it to the screen same syntax as drawing a normal image
+    
 }
 
 function mousePressed(){
-    catgif.pause();
+   // catgif.pause();
 }
 
 function mouseReleased(){
-    catgif.play();
+   // catgif.play();
 }
