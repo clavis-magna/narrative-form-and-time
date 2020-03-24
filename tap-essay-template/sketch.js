@@ -19,9 +19,11 @@ function setup() {
 function draw () {
   
  if (screen==1) {
+   
    //draw first screen
    background(50);
    text("Page 1", width/2,height/2);
+   
   }
   
   else if (screen==2) {

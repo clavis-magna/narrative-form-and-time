@@ -4,58 +4,54 @@ function setup() {
   background(66, 135, 245);
 }
 
-let w = 100;
-let h = 50;
+const colourStep = 10;
+const brickWidth = 100;
+const brickHeight = 50;
+const motar = 10;
 let y;
 let x;
-let gap = 10;
 
 function draw() {
-  // put drawing code here
-  fill(0);
-  
   //Brick 1
+  fill(0);
   x = 0;
   y = 0;
-  rect(x, y, w, h);
+  rect(x, y, brickWidth, brickHeight);
   
   //Brick 2
-  fill(40);
-  x = w + gap;
-  rect(x, y, w, h);
+  fill(colourStep);
+  x = brickWidth + motar;
+  rect(x, y, brickWidth, brickHeight);
   
   //Brick 3
-  fill(80);
-  x = (w + gap) * 2;
-  rect(x, y, w, h);
+  fill(colourStep*2);
+  x = (brickWidth + motar) * 2;
+  rect(x, y, brickWidth, brickHeight);
   
   //Brick 4
-  fill(120);
-  x = w / 2;
-  y = h + gap;
-  rect(x, y, w, h);
+  fill(colourStep*3);
+  x = (brickWidth + motar) / 2;
+  y = brickHeight + motar;
+  rect(x, y, brickWidth, brickHeight);
   
   //Brick 5
-  fill(150);
-  x =  w / 2 + w + gap;
-  y = h + gap;
-  rect(x, y, w, h);
+  fill(colourStep*4);
+  x =  (brickWidth + motar) / 2 + brickWidth + motar;
+  rect(x, y, brickWidth, brickHeight);
   
   //Brick 6
-  fill(180);
+  fill(colourStep*5);
   x =  0;
-  y = ( h + gap ) * 2;
-  rect(x, y, w, h);
+  y = ( brickHeight + motar ) * 2;
+  rect(x, y, brickWidth, brickHeight);
   
   //Brick 7
-  fill(220);
-  x =  w + gap;
-  y = ( h + gap ) * 2;
-  rect(x, y, w, h);
+  fill(colourStep*6);
+  x =  brickWidth + motar;
+  rect(x, y, brickWidth, brickHeight);
   
   //Brick 8
-  fill(260);
-  x =  ( w + gap ) * 2;
-  y = ( h + gap ) * 2;
-  rect(x, y, w, h);
+  fill(colourStep*7);
+  x =  ( brickWidth + motar ) * 2;
+  rect(x, y, brickWidth, brickHeight);
 }
