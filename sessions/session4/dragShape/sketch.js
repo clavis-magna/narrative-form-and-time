@@ -16,6 +16,7 @@ function setup() {
 function draw () {
   background(66, 135, 245);
   ellipse(shapeX, shapeY, diameter, diameter);
+//  print(grabbed);
 }
 
 function mousePressed () {
@@ -26,11 +27,13 @@ function mousePressed () {
     grabbed = false;
   }
 }
+
 function mouseReleased () {
   grabbed = false;
 }
 
 function mouseDragged() {
+//  print('dragged');
   if(grabbed){
     shapeX = mouseX;
     shapeY = mouseY;
