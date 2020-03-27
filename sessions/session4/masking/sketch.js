@@ -1,7 +1,7 @@
 let cat;        // the cat image
 let dog;        // the dog image
-let maskedDog;  // variable to hold the masked dog
-let mask;       // the mask canvas
+//let maskedDog;  // variable to hold the masked dog
+//let mask;       // the mask canvas
 let maskBrush;  // the 'brush' we'll draw on the mask with (a black circle)
 
 function preload () {
@@ -13,6 +13,7 @@ function preload () {
 
 function setup() {
     createCanvas(600, 600);
+  
     // create an image that will mask canvas (at the same size as the canvas).
     mask = createGraphics(width, height);
     // So brush is centered on the mouse position when we draw
