@@ -1,4 +1,4 @@
-var screen = 1;
+var screen = 2;
 var numberOfPages = 3;
 
 // Screen 2 variables
@@ -15,9 +15,16 @@ let blob3Selected = false;
 
 const blob4Rect1 = [480, 280, 280, 280];
 const blob4Rect2 = [760, 320, 100, 200];
-let blob4Selected = false;
 
 let bgImage;
+let blob1purple;
+let blob2purple;
+let blob3purple;
+let blob4purple;
+let blob1green;
+let blob2green;
+let blob3green;
+let blob4green;
 function preload(){
   bgImage = loadImage('assets/bg.png');
   blob1purple = loadImage('assets/blob1purple.png');
@@ -30,50 +37,7 @@ function preload(){
   blob4green = loadImage('assets/blob4green.png');
 }
 
-function mouseIsInCircle(radius, circleX, circleY){
-  let d = dist(mouseX, mouseY, circleX, circleY);
-  if( d < radius) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
-function mouseIsInTriangle(x1, y1, x2, y2, x3, y3){
-  
-  function areaOfTriangle(x1, y1, x2, y2, x3, y3) {
-    return Math.abs( ( x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2) ) / 2 );
-  }
-  
-  /* Calculate area of triangle ABC */   
-  let A = areaOfTriangle(x1, y1, x2, y2, x3, y3);
-  /* Calculate area of triangle PBC */   
-  let A1 = areaOfTriangle(mouseX, mouseY, x2, y2, x3, y3);
-   /* Calculate area of triangle PAC */   
-  let A2 = areaOfTriangle(x1, y1, mouseX, mouseY, x3, y3);
-  /* Calculate area of triangle PAB */    
-  let A3 = areaOfTriangle(x1, y1, x2, y2, mouseX, mouseY);
-  /* Check if sum of A1, A2 and A3 is same as A */ 
-  return (A == A1 + A2 + A3); 
-}
-
-function mouseIsInRect( x, y, width, height, rectModeCenter = false ){
-  if( rectModeCenter ) {
-    return (
-      mouseX > x - width / 2 &&
-      mouseX < x + width / 2 &&
-      mouseY > y - height / 2 &&
-      mouseY < y + height / 2
-    );
-  } else {
-    return (
-      mouseX > x &&
-      mouseX < x + width &&
-      mouseY > y &&
-      mouseY < y + height
-    );
-  }
-}
 
 function setup() {
   // put setup code here
@@ -149,6 +113,51 @@ function incrementScreen () {
   }
 }
 
+function mouseIsInCircle(radius, circleX, circleY){
+  let d = dist(mouseX, mouseY, circleX, circleY);
+  if( d < radius) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function mouseIsInTriangle(x1, y1, x2, y2, x3, y3){
+  
+  function areaOfTriangle(x1, y1, x2, y2, x3, y3) {
+    return Math.abs( ( x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2) ) / 2 );
+  }
+  
+  /* Calculate area of triangle ABC */   
+  let A = areaOfTriangle(x1, y1, x2, y2, x3, y3);
+  /* Calculate area of triangle PBC */   
+  let A1 = areaOfTriangle(mouseX, mouseY, x2, y2, x3, y3);
+   /* Calculate area of triangle PAC */   
+  let A2 = areaOfTriangle(x1, y1, mouseX, mouseY, x3, y3);
+  /* Calculate area of triangle PAB */    
+  let A3 = areaOfTriangle(x1, y1, x2, y2, mouseX, mouseY);
+  /* Check if sum of A1, A2 and A3 is same as A */ 
+  return (A == A1 + A2 + A3); 
+}
+
+function mouseIsInRect( x, y, width, height, rectModeCenter = false ){
+  if( rectModeCenter ) {
+    return (
+      mouseX > x - width / 2 &&
+      mouseX < x + width / 2 &&
+      mouseY > y - height / 2 &&
+      mouseY < y + height / 2
+    );
+  } else {
+    return (
+      mouseX > x &&
+      mouseX < x + width &&
+      mouseY > y &&
+      mouseY < y + height
+    );
+  }
+}
+
 function mousePressed () {
 
   
@@ -157,23 +166,28 @@ function mousePressed () {
      incrementScreen();
   }
   else if (screen==2) {
+    
     if( mouseIsInCircle(blob1Radius, blob1X, blob1Y) ) {
       blob1Selected = !blob1Selected;
       print('in blob 1');
-    } else if( mouseIsInTriangle.apply( this, blob2TriangleCoOrds ) ) {
+      print( blob1Selected );
+    } 
+    else if( mouseIsInTriangle.apply( this, blob2TriangleCoOrds ) ) {
       blob2Selected = !blob2Selected;
       print('in blob 2');
-    } else if( mouseIsInRect.apply( this, blob3Rect ) ) {
+    } 
+    else if( mouseIsInRect.apply( this, blob3Rect ) ) {
       blob3Selected = !blob3Selected;
       print('in blob 3');
-    } else if( 
+    } 
+    else if( 
       mouseIsInRect.apply( this, blob4Rect1 ) || 
       mouseIsInRect.apply( this, blob4Rect2 ) 
     ) {
-      blob4Selected = !blob4Selected;
       print('in blob 4');
       incrementScreen();
     }
+    
   }
   
   else if (screen==3) {
