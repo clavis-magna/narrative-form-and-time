@@ -27,9 +27,12 @@ function draw() {
   // Follower 1
   dx1 = mouseX - x1;
   dy1 = mouseY - y1;
+  
   angle1 = atan2(dy1, dx1);
+  
   x1 = mouseX - cos(angle1) * distBehind1;
   y1 = mouseY - sin(angle1) * distBehind1;
+  
   fill('red');
   ellipse(x1, y1, 10, 10);
   
