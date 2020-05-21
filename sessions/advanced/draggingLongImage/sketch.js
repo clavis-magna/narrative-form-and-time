@@ -1,6 +1,7 @@
 let img;
 let longImageX = 0;
 let prevMouseX;
+let imageWidth = 2000;
 
 function preload() {
   img = loadImage('assets/redfern.jpg');
@@ -12,7 +13,8 @@ function setup() {
 
 function draw() {
   background(255);
-  image(img, longImageX, 0, width * 4, height);
+  console.log(longImageX);
+  image(img, longImageX, 0, imageWidth, height);
 }
 
 function mousePressed() {
@@ -22,4 +24,7 @@ function mousePressed() {
 function mouseDragged() {
   longImageX = longImageX + mouseX - prevMouseX;
   prevMouseX = mouseX;
+  if(longImageX < (imageWidth - width) * -1) {
+    console.log('move to next screen');
+  }
 }
