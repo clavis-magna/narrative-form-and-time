@@ -20,9 +20,9 @@ function setup() {
 
 function draw () {
   background(66, 135, 245);
- if (screen==1) {
-   //draw first screen
-   text("Page 1 (No sound playing)", width/2,height/2);
+  if (screen==1) {
+    //draw first screen
+    text("Page 1 (No sound playing)", width/2,height/2);
   } else if (screen==2) {
     //draw third screen
     text("Page 2 (Crowd sound should be playing)", width/2,height/2);
@@ -36,7 +36,7 @@ function draw () {
     //draw fourth screen
     text("Page 5 (Train crossing sound should be playing)", width/2,height/2);
   }
-  
+
 }
 
 function incrementScreen () {

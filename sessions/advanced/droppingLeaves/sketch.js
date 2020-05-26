@@ -34,7 +34,7 @@ let secondPositions = [
 let currentPositions = firstPositions;
 
 function preload() {
-  img = loadImage('assets/redfern.jpg');
+  img = loadImage('assets/leaf.png');
 }
 
 function setup() {
@@ -42,7 +42,7 @@ function setup() {
 }
 
 function draw() {
-  background('blue');
+  background('yellow');
   
   // Draw each image. (4 of them, hence the for loop)
   for(let i= 0; i < 4; i++) {
