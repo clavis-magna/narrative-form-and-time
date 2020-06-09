@@ -43,7 +43,7 @@ function setup() {
 
 function draw() {
   background('yellow');
-  
+
   // Draw each image. (4 of them, hence the for loop)
   for(let i= 0; i < 4; i++) {
     // Call our progress animation function
@@ -74,7 +74,7 @@ function progressAnimation(index) {
     ) {
       hasAnimated[index] = true;
     }
-  }
+  } 
 }
 
 function mouseMoved() {
